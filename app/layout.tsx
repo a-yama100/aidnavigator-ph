@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | AidNavigator PH",
   },
   description: "Comprehensive database of Philippine government subsidies, healthcare, education, housing, and financial aid programs. Eligibility checker, application checklists, and program change alerts.",
-  keywords: ["Philippine government aid", "subsidy Philippines", "PhilHealth", "4Ps program", "DOLE assistance", "DSWD programs", "education scholarship Philippines", "housing program Philippines"],
+  keywords: ["Philippine government aid", "subsidy Philippines", "PhilHealth", "4Ps program", "DOLE assistance", "DSWD programs", "education scholarship Philippines", "housing program Philippines", "SSS benefits", "Pag-IBIG fund", "senior citizen benefits Philippines", "PWD benefits Philippines", "TUPAD program", "government financial assistance"],
   openGraph: {
     type: "website",
     locale: "en_PH",
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     description: "Find and apply for Philippine government aid programs. Subsidies, healthcare, education, housing support.",
   },
   robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AidNavigator PH - Philippine Government Aid & Support Programs',
+    description: 'Find and apply for Philippine government aid programs. Subsidies, healthcare, education, housing, and financial assistance.',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
