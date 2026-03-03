@@ -4,6 +4,9 @@ import { Navbar } from "@/components/Navbar"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aid.phtechai.com"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: {
     default: "AidNavigator PH - Philippine Government Aid & Support Programs Database",
     template: "%s | AidNavigator PH",
