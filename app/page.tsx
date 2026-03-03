@@ -35,18 +35,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-blue-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">AidNavigator PH</Link>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <Link href="/programs/financial" className="hover:text-blue-200">Financial</Link>
-            <Link href="/programs/health" className="hover:text-blue-200">Healthcare</Link>
-            <Link href="/programs/education" className="hover:text-blue-200">Education</Link>
-            <Link href="/programs/housing" className="hover:text-blue-200">Housing</Link>
-            <Link href="/about" className="hover:text-blue-200">About</Link>
-          </nav>
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-16 px-4">

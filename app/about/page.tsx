@@ -8,18 +8,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <header className="bg-blue-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">AidNavigator PH</Link>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <Link href="/programs/financial" className="hover:text-blue-200">Financial</Link>
-            <Link href="/programs/health" className="hover:text-blue-200">Healthcare</Link>
-            <Link href="/programs/education" className="hover:text-blue-200">Education</Link>
-            <Link href="/programs/housing" className="hover:text-blue-200">Housing</Link>
-            <Link href="/about" className="text-blue-200 font-medium">About</Link>
-          </nav>
-        </div>
-      </header>
 
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">About AidNavigator PH</h1>
