@@ -12,7 +12,7 @@ export async function createClient() {
         setAll(cookiesToSet: { name: string; value: string; options?: Record<string, unknown> }[]) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, { ...(options || {}), domain: '.phtechai.com' })
+              cookieStore.set(name, value, { ...(options || {}), domain: '.phaiworks.com' })
             )
           } catch {}
         },

@@ -115,10 +115,10 @@ export default function HomePage() {
           <div className="flex items-center gap-4">
             <span>AidNavigator PH</span>
             <span>|</span>
-            <span>A project by <a href="https://www.phtechai.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-white">PH Tech AI</a></span>
+            <span>A project by <a href="https://www.phaiworks.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-white">PH Tech AI</a></span>
           </div>
           <div className="flex gap-4">
-            <a href="https://hojokin.phtechai.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Hojokin de Go!</a>
+            <a href="https://hojokin.phaiworks.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Hojokin de Go!</a>
             <Link href="/about" className="hover:text-white">About</Link>
             <Link href="/contact" className="hover:text-white">Contact</Link>
           </div>

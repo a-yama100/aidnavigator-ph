@@ -32,7 +32,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold mt-8 mb-3">Built by PH Tech AI</h2>
           <p>
             AidNavigator PH is developed and maintained by{" "}
-            <a href="https://www.phtechai.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            <a href="https://www.phaiworks.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
               PH Tech AI
             </a>
             , an AI solutions company based in the Philippines with 35+ years of IT expertise.

@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar"
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aid.phtechai.com"),
+  metadataBase: new URL("https://aid.phaiworks.com"),
   icons: {
     icon: "/favicon.svg",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://aid.phtechai.com",
+    url: "https://aid.phaiworks.com",
     siteName: "AidNavigator PH",
     title: "AidNavigator PH - Philippine Government Aid & Support Programs",
     description: "Find and apply for Philippine government aid programs. Subsidies, healthcare, education, housing support.",
