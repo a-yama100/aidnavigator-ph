@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: "About AidNavigator PH",
-  description: "Learn about AidNavigator PH - a comprehensive Philippine government aid programs database by PH Tech AI.",
+  description: "Learn about AidNavigator PH - a comprehensive Philippine government aid programs database by PH AI Works.",
 }
 
 export default function AboutPage() {
@@ -29,11 +29,11 @@ export default function AboutPage() {
             <li>Application checklist generator</li>
             <li>Program change alerts (coming soon)</li>
           </ul>
-          <h2 className="text-xl font-semibold mt-8 mb-3">Built by PH Tech AI</h2>
+          <h2 className="text-xl font-semibold mt-8 mb-3">Built by PH AI Works</h2>
           <p>
             AidNavigator PH is developed and maintained by{" "}
             <a href="https://www.phaiworks.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              PH Tech AI
+              PH AI Works
             </a>
             , an AI solutions company based in the Philippines with 35+ years of IT expertise.
           </p>
