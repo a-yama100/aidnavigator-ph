@@ -55,7 +55,7 @@ export function Navbar() {
           </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-blue-100 hover:bg-blue-800"
+            className="md:hidden p-2 rounded-lg text-blue-100 hover:bg-blue-800 cursor-pointer"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
