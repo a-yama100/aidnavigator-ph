@@ -120,7 +120,7 @@ export default function HomePage() {
           <div className="flex gap-4">
             <a href="https://hojokin.phaiworks.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Hojokin de Go!</a>
             <Link href="/about" className="hover:text-white">About</Link>
-            <Link href="/contact" className="hover:text-white">Contact</Link>
+            <a href="https://www.phaiworks.com/contact" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
           </div>
         </div>
       </footer>
