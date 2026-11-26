@@ -1,11 +1,12 @@
-import Link from 'next/link'
+const IT_START_YEAR = 1990
 
 export const metadata = {
   title: "About AidNavigator PH",
-  description: "Learn about AidNavigator PH - a comprehensive Philippine government aid programs database by PH AI Works.",
+  description: "About AidNavigator PH, a guide to Philippine government aid programs built by PH AI Works.",
 }
 
 export default function AboutPage() {
+  const itYears = new Date().getFullYear() - IT_START_YEAR
   return (
     <div className="min-h-screen">
 
@@ -13,21 +14,20 @@ export default function AboutPage() {
         <h1 className="text-3xl font-bold mb-6">About AidNavigator PH</h1>
         <div className="space-y-4 text-gray-700 leading-relaxed">
           <p>
-            AidNavigator PH is a comprehensive information platform that organizes Philippine
-            government subsidies, healthcare support, education assistance, housing programs,
-            and financial aid into a searchable, easy-to-navigate database.
+            AidNavigator PH brings Philippine government aid programs together in one place:
+            cash aid, healthcare, education, and housing support.
           </p>
           <p>
-            Our mission is to help Filipino citizens, NGOs, barangay offices, and social workers
-            quickly find relevant government programs, check eligibility requirements, and
-            generate application checklists.
+            Our goal is to help Filipino citizens, NGOs, barangay offices, and social workers
+            quickly find the right programs, see who can apply, and know which documents to prepare.
           </p>
-          <h2 className="text-xl font-semibold mt-8 mb-3">Key Features</h2>
+          <h2 className="text-xl font-semibold mt-8 mb-3">Planned Features</h2>
+          <p>We are building the program database now. These features are planned:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Cross-agency program database covering DSWD, DOLE, DepEd, CHED, DOH, TESDA, Pag-IBIG, NHA, and more</li>
-            <li>Eligibility requirement database with filtering</li>
-            <li>Application checklist generator</li>
-            <li>Program change alerts (coming soon)</li>
+            <li>One program list covering DSWD, DOLE, DepEd, CHED, DOH, TESDA, Pag-IBIG, NHA, and more</li>
+            <li>Eligibility requirements you can filter</li>
+            <li>Application checklists for each program</li>
+            <li>Alerts when a program changes</li>
           </ul>
           <h2 className="text-xl font-semibold mt-8 mb-3">Built by PH AI Works</h2>
           <p>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <a href="https://www.phaiworks.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
               PH AI Works
             </a>
-            , an AI solutions company based in the Philippines with 35+ years of IT expertise.
+            , an AI solutions company based in the Philippines with {itYears}+ years of IT experience.
           </p>
         </div>
       </main>

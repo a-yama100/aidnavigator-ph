@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
 import Script from 'next/script'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     default: "AidNavigator PH - Philippine Government Aid & Support Programs Database",
     template: "%s | AidNavigator PH",
   },
-  description: "Comprehensive database of Philippine government subsidies, healthcare, education, housing, and financial aid programs. Eligibility checker, application checklists, and program change alerts.",
+  description: "A guide to Philippine government aid programs for cash assistance, healthcare, education, and housing. Eligibility checks and application checklists are coming soon.",
   keywords: ["Philippine government aid", "subsidy Philippines", "PhilHealth", "4Ps program", "DOLE assistance", "DSWD programs", "education scholarship Philippines", "housing program Philippines", "SSS benefits", "Pag-IBIG fund", "senior citizen benefits Philippines", "PWD benefits Philippines", "TUPAD program", "government financial assistance"],
   openGraph: {
     type: "website",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased bg-white text-gray-900">
         <Navbar />
         {children}
+        <Footer />
         {gaId && (
           <>
             <Script
