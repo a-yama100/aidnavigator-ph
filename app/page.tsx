@@ -32,37 +32,40 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">
-            Find Government Aid Programs You Qualify For
-          </h1>
-          <Image
-            src="/media/hero.webp"
-            alt="A social worker at a barangay help desk explains an aid program checklist to an elderly couple"
-            width={1600}
-            height={679}
-            priority
-            sizes="(max-width: 896px) 100vw, 864px"
-            className="w-full h-auto rounded-xl shadow-lg mb-8"
-          />
-          <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Find Philippine government programs for cash aid, healthcare, education, and housing in one place.
-            Eligibility checks and application checklists are coming soon.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/programs/financial"
-              className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              Browse Programs
-            </Link>
-            <Link
-              href="/about"
-              className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
-            >
-              How It Works
-            </Link>
+      {/* 背景の帯も本文の幅に収める（2026-11-27） */}
+      <section className="max-w-6xl mx-auto px-4 pt-6">
+        <div className="bg-gradient-to-b from-blue-900 to-blue-700 text-white rounded-2xl py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
+              Find Government Aid Programs You Qualify For
+            </h1>
+            <Image
+              src="/media/hero.webp"
+              alt="A social worker at a barangay help desk explains an aid program checklist to an elderly couple"
+              width={1600}
+              height={679}
+              priority
+              sizes="(max-width: 896px) 100vw, 864px"
+              className="w-full h-auto rounded-xl shadow-lg mb-8"
+            />
+            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Find Philippine government programs for cash aid, healthcare, education, and housing in one place.
+              Eligibility checks and application checklists are coming soon.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/programs/financial"
+                className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
+                Browse Programs
+              </Link>
+              <Link
+                href="/about"
+                className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+              >
+                How It Works
+              </Link>
+            </div>
           </div>
         </div>
       </section>
