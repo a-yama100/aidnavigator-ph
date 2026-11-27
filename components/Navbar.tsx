@@ -3,14 +3,19 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import { NAV, PAGE_PATH, localePath, stripLang, type Lang } from "@/lib/content"
 
-export function Navbar() {
+export function Navbar({ lang }: { lang: Lang }) {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const t = NAV[lang]
+  // 今のページの、言語を除いたパス（もう一方の言語の同じページへのリンクに使う）
+  const basePath = stripLang(pathname)
+  const other: Lang = lang === "ja" ? "en" : "ja"
 
   const isActive = (path: string) => {
-    if (path === "/") return pathname === "/"
-    return pathname.startsWith(path)
+    if (path === "/") return basePath === "/"
+    return basePath.startsWith(path)
   }
 
   const linkClass = (path: string) => {
@@ -29,11 +34,23 @@ export function Navbar() {
     return base + " text-blue-100 hover:bg-blue-800"
   }
 
+  // 言語の切り替え。ルートレイアウトが別なので、Link ではなく a で移る
+  const toggle = (
+    <a
+      href={localePath(other, basePath)}
+      hrefLang={other}
+      lang={other}
+      className="px-3 py-1.5 rounded-lg text-sm font-medium border border-blue-300 text-blue-100 hover:bg-blue-800 hover:text-white transition-all duration-200"
+    >
+      {t.toggle}
+    </a>
+  )
+
   return (
     <nav className="bg-blue-900 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href={localePath(lang, "/")} className="flex items-center space-x-2 group">
             <Image
               src="/favicon.svg"
               alt="AidNavigator PH"
@@ -46,37 +63,44 @@ export function Navbar() {
             </span>
           </Link>
           <div className="hidden md:flex items-center space-x-1">
-            <Link href="/" className={linkClass("/")}>Home</Link>
-            <Link href="/programs/financial" className={linkClass("/programs/financial")}>Financial</Link>
-            <Link href="/programs/health" className={linkClass("/programs/health")}>Healthcare</Link>
-            <Link href="/programs/education" className={linkClass("/programs/education")}>Education</Link>
-            <Link href="/programs/housing" className={linkClass("/programs/housing")}>Housing</Link>
-            <Link href="/about" className={linkClass("/about")}>About</Link>
+            {t.items.map((item) => (
+              <Link key={item.key} href={localePath(lang, PAGE_PATH[item.key])} className={linkClass(PAGE_PATH[item.key])}>
+                {item.label}
+              </Link>
+            ))}
+            <span className="pl-2">{toggle}</span>
           </div>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menu"
-            aria-expanded={isOpen}
-            className="md:hidden p-2 rounded-lg text-blue-100 hover:bg-blue-800 cursor-pointer"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            {toggle}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={t.menu}
+              aria-expanded={isOpen}
+              className="p-2 rounded-lg text-blue-100 hover:bg-blue-800 cursor-pointer"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       {isOpen && (
         <div className="md:hidden border-t border-blue-800">
-          <Link href="/" className={mobileLinkClass("/")} onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/programs/financial" className={mobileLinkClass("/programs/financial")} onClick={() => setIsOpen(false)}>Financial</Link>
-          <Link href="/programs/health" className={mobileLinkClass("/programs/health")} onClick={() => setIsOpen(false)}>Healthcare</Link>
-          <Link href="/programs/education" className={mobileLinkClass("/programs/education")} onClick={() => setIsOpen(false)}>Education</Link>
-          <Link href="/programs/housing" className={mobileLinkClass("/programs/housing")} onClick={() => setIsOpen(false)}>Housing</Link>
-          <Link href="/about" className={mobileLinkClass("/about")} onClick={() => setIsOpen(false)}>About</Link>
+          {t.items.map((item) => (
+            <Link
+              key={item.key}
+              href={localePath(lang, PAGE_PATH[item.key])}
+              className={mobileLinkClass(PAGE_PATH[item.key])}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
