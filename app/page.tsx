@@ -48,7 +48,7 @@ export default function HomePage() {
               sizes="(max-width: 896px) 100vw, 864px"
               className="w-full h-auto rounded-xl shadow-lg mb-8"
             />
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-blue-100 mb-8">
               Find Philippine government programs for cash aid, healthcare, education, and housing in one place.
               Eligibility checks and application checklists are coming soon.
             </p>
